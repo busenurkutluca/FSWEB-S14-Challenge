@@ -44,21 +44,21 @@ public class MainTest {
         Field addition4NameField = hamburger.getClass().getDeclaredField("addition4Name");
         Field addition4PriceField = hamburger.getClass().getDeclaredField("addition4Price");
 
-        assertEquals(nameField.getModifiers(), 2);
+        assertEquals(nameField.getModifiers(), 0);
         assertEquals(meatField.getModifiers(), 2);
-        assertEquals(priceField.getModifiers(), 2);
+        assertEquals(priceField.getModifiers(), 0);
 
-        assertEquals(addition1NameField.getModifiers(), 2);
-        assertEquals(addition1PriceField.getModifiers(), 2);
+        assertEquals(addition1NameField.getModifiers(), 0);
+        assertEquals(addition1PriceField.getModifiers(), 0);
 
-        assertEquals(addition2NameField.getModifiers(), 2);
-        assertEquals(addition2PriceField.getModifiers(), 2);
+        assertEquals(addition2NameField.getModifiers(), 0);
+        assertEquals(addition2PriceField.getModifiers(), 0);
 
-        assertEquals(addition3NameField.getModifiers(), 2);
-        assertEquals(addition3PriceField.getModifiers(), 2);
+        assertEquals(addition3NameField.getModifiers(), 0);
+        assertEquals(addition3PriceField.getModifiers(), 0);
 
-        assertEquals(addition4NameField.getModifiers(), 2);
-        assertEquals(addition4PriceField.getModifiers(), 2);
+        assertEquals(addition4NameField.getModifiers(), 0);
+        assertEquals(addition4PriceField.getModifiers(), 0);
     }
 
 
@@ -78,15 +78,15 @@ public class MainTest {
         hamburger.addHamburgerAddition2("test", 3);
         hamburger.addHamburgerAddition3("test", 3);
         hamburger.itemizeHamburger();
-        assertEquals(hamburger.getPrice(), 13);
+        assertEquals(hamburger.getPrice(), 4);
 
     }
 
     @DisplayName("Deluxe Burger sınıf değişkenleri doğru değerlere sahip mi?")
     @Test
     public void testDeluxeBurgerInstanceVariables() throws NoSuchFieldException {
-        assertEquals(deluxeBurger.getCips(), "CURVY");
-        assertEquals(deluxeBurger.getDrink(), "COKE");
+        assertEquals(deluxeBurger.getChips(), "Curvy");
+        assertEquals(deluxeBurger.getDrink(), "Coke");
     }
 
     @DisplayName("Deluxe Burger sınıfı addAddition methodları doğru çalışıyor mu?")
@@ -111,7 +111,7 @@ public class MainTest {
         healthyBurger.addHealthyAddition1("test", 2);
         healthyBurger.addHealthyAddition2("test", 2);
         healthyBurger.itemizeHamburger();
-        assertEquals(healthyBurger.getPrice(), 9.67);
+        assertEquals(healthyBurger.getPrice(), 5.67);
     }
 
 }

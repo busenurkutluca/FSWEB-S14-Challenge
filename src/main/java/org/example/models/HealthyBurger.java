@@ -3,7 +3,6 @@ package org.example.models;
 public class HealthyBurger extends Hamburger {
     private String healthyExtra1Name;
     private double healthyExtra1Price;
-
     private String healthyExtra2Name;
     private double healthyExtra2Price;
 
@@ -23,17 +22,39 @@ public class HealthyBurger extends Hamburger {
 
     @Override
     public double itemizeHamburger() {
-        double totalPrice = super.itemizeHamburger();
+        System.out.println("Name: " + super.name);
+        System.out.println("Meat: " + "Tofu");
+        System.out.println("BreadRollType: " + super.breadRollType);
 
-        if (this.healthyExtra1Name != null) {
-            totalPrice += this.healthyExtra1Price;
-            System.out.println("Added " + this.healthyExtra1Name + " for an extra " + this.healthyExtra1Price);
+        double totalPrice = super.price;
+
+        if (super.addition1Name != null) {
+            System.out.println("Addition1: " + super.addition1Name);
+            totalPrice += super.addition1Price;
         }
-        if (this.healthyExtra2Name != null) {
-            totalPrice += this.healthyExtra2Price;
-            System.out.println("Added " + this.healthyExtra2Name + " for an extra " + this.healthyExtra2Price);
+        if (super.addition2Name != null) {
+            System.out.println("Addition2: " + super.addition2Name);
+            totalPrice += super.addition2Price;
+        }
+        if (super.addition3Name != null) {
+            System.out.println("Addition3: " + super.addition3Name);
+            totalPrice += super.addition3Price;
+        }
+        if (super.addition4Name != null) {
+            System.out.println("Addition4: " + super.addition4Name);
+            totalPrice += super.addition4Price;
         }
 
+        if (healthyExtra1Name != null) {
+            System.out.println("HealthyAddition1: " + healthyExtra1Name);
+            totalPrice += healthyExtra1Price;
+        }
+        if (healthyExtra2Name != null) {
+            System.out.println("HealthyAddition2: " + healthyExtra2Name);
+            totalPrice += healthyExtra2Price;
+        }
+
+        System.out.println("Price: " + String.format("%.2f", totalPrice));
         return totalPrice;
     }
 }
